@@ -6,3 +6,5 @@ class Solution:
         kelvin = celsius + 273.15
         ans = [kelvin, fahrenheit]
         return ans
+
+
