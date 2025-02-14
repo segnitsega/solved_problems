@@ -1,5 +1,6 @@
-🚀 Competitive Programming Solutions
-📌 A collection of my solved problems from
+🚀  # Competitive Programming Solutions
+
+📌 # A collection of my solved problems from
 
 LeetCode 🏆
 HackerRank 🎯
