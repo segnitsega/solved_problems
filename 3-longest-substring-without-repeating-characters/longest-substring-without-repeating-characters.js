@@ -1,19 +1,18 @@
 var lengthOfLongestSubstring = function(s) {
-  let p = 0;
-  let subStr = {};
-  let maxLen = 0;
-  let length = 0;
-  while (p < s.length) {
-    if (!subStr[s[p]]) {
-     subStr[s[p]] = true;
-     length++;
-     maxLen = Math.max(maxLen, length);
-     p++;
-    } else {
-      subStr = {};
-      p = p - length + 1;
-      length = 0;
+    let l = 0;
+    let r = l;
+    let longest = 0;
+    let map = {};
+    while(r < s.length){
+         if(!(s[r] in map)){
+            map[s[r]] = r;
+            longest = Math.max(longest, r - l + 1);
+         } else{
+            l = Math.max(l, map[s[r]] + 1);
+            map[s[r]] = r;
+            longest = Math.max(longest, r - l + 1);
+         }
+        r++;
     }
-  }
-  return maxLen;
+    return longest;
 };
