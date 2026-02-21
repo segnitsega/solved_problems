@@ -1,21 +1,17 @@
 var isValid = function(s) {
-    
-    const parentheses = {
-        "{": 1,
-        "(": 2,
-        "[": 3,
-        "}": 4,
-        ")": 5,
-        "]": 6,
-    }
+    const map = {
+        "}": "{",
+        ")": "(",
+        "]": "["
+    } 
     let stack = [];
-    for(let i = 0; i < s.length; i++){
-        if(parentheses[s[i]] <= 3) stack.push(s[i]);
+    for(let char of s){
+        if(!map[char]) stack.push(char);
         else {
-            const val = stack.pop();
-            if(parentheses[val] + 3 !== parentheses[s[i]]) return false;
+            const topChar = stack.pop();
+            if(map[char] !== topChar) return false;
+        }
     }
-    }
-    if(stack.length > 0) return false;
-    return true;
+    
+    return stack.length === 0;
 };
