@@ -17,7 +17,7 @@ class MinStack {
     pop(){
         this.stack.pop();
         this.minStack.pop();
-        this.currentMin = this.minStack[this.minStack.length - 1];
+        this.currentMin = this.minStack.length ? this.minStack[this.minStack.length - 1] : Infinity;
     }
 
     top(){
