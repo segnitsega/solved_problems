@@ -26,7 +26,6 @@ class MinStack {
     } 
 
     getMin(){
-        console.log(this.minStack)
         return this.minStack[this.minStack.length - 1];
     }
 }
